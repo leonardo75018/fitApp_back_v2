@@ -1,7 +1,7 @@
 import AppError from '@shared/errors/AppError';
 import { getCustomRepository } from 'typeorm';
-import PhysicalPlan from '../typeorm/entities/PhysicalPlan';
-import { PhysicalPlanRepository } from '../typeorm/repositories/PhysicalPlanRepository';
+import PhysicalPlan from '../infra/typeorm/entities/PhysicalPlan';
+import { PhysicalPlanRepository } from '../infra/typeorm/repositories/PhysicalPlanRepository';
 
 interface IRequest {
   id: string;

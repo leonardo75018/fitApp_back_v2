@@ -1,6 +1,6 @@
 import { getCustomRepository } from 'typeorm';
-import Exercice_session from '../typeorm/entities/Exercice_session';
-import { Exercice_session_Repository } from '../typeorm/repositories/Exercice_session_Repository';
+import Exercice_session from '../infra/typeorm/entities/Exercice_session';
+import { Exercice_session_Repository } from '../infra/typeorm/repositories/Exercice_session_Repository';
 
 class ListExerice_session_Service {
   public async execute(): Promise<Exercice_session[] | undefined> {

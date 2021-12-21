@@ -1,6 +1,6 @@
 import { getCustomRepository } from 'typeorm';
-import Category from '../typeorm/entities/Categorys';
-import { CategorysRepository } from '../typeorm/repositories/CategorysRepository';
+import Category from '../infra/typeorm/entities/Categorys';
+import { CategorysRepository } from '../infra/typeorm/repositories/CategorysRepository';
 
 class ListCategorysService {
   public async execute(): Promise<Category[] | undefined> {

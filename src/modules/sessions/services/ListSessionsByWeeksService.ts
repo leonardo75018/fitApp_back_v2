@@ -1,6 +1,6 @@
 import { getCustomRepository } from 'typeorm';
-import Session from '../typeorm/entities/Session';
-import { SessionsRepository } from '../typeorm/repositories/SessionsRepository';
+import Session from '../infra/typeorm/entities/Session';
+import { SessionsRepository } from '../infra/typeorm/repositories/SessionsRepository';
 
 interface IRequest {
   week_id: string;

@@ -1,6 +1,6 @@
 import { getCustomRepository } from 'typeorm';
-import PhysicalPlan from '../typeorm/entities/PhysicalPlan';
-import { PhysicalPlanRepository } from '../typeorm/repositories/PhysicalPlanRepository';
+import PhysicalPlan from '../infra/typeorm/entities/PhysicalPlan';
+import { PhysicalPlanRepository } from '../infra/typeorm/repositories/PhysicalPlanRepository';
 
 class ListPhysicalPlansService {
   public async execute(): Promise<PhysicalPlan[] | undefined> {

@@ -1,7 +1,7 @@
 import AppError from '@shared/errors/AppError';
 import { getCustomRepository } from 'typeorm';
-import Week from '../typeorm/entities/Weeks';
-import { WeeksRepository } from '../typeorm/repositories/WeeksRepository';
+import Week from '../infra/typeorm/entities/Weeks';
+import { WeeksRepository } from '../infra/typeorm/repositories/WeeksRepository';
 
 interface IRequest {
   id: string;

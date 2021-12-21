@@ -1,6 +1,6 @@
 import { getCustomRepository } from 'typeorm';
-import Weeks from '../typeorm/entities/Weeks';
-import { WeeksRepository } from '../typeorm/repositories/WeeksRepository';
+import Weeks from '../infra/typeorm/entities/Weeks';
+import { WeeksRepository } from '../infra/typeorm/repositories/WeeksRepository';
 
 class ListWeeksService {
   public async execute(): Promise<Weeks[] | undefined> {

@@ -1,7 +1,8 @@
 import AppError from '@shared/errors/AppError';
 import { getCustomRepository } from 'typeorm';
-import Weeks from '../typeorm/entities/Weeks';
-import { WeeksRepository } from '../typeorm/repositories/WeeksRepository';
+import { ICreateWeek } from '../domain/mdoel/ICreateWeek';
+import Weeks from '../infra/typeorm/entities/Weeks';
+import { WeeksRepository } from '../infra/typeorm/repositories/WeeksRepository';
 
 interface IResquest {
   name: string;
@@ -16,7 +17,7 @@ class CreateWeeksService {
     end,
     name,
     physical_plan_id,
-  }: IResquest): Promise<Weeks> {
+  }: ICreateWeek): Promise<Weeks> {
     const weeksRepository = getCustomRepository(WeeksRepository);
 
     const weeksExist = await weeksRepository.findOne({

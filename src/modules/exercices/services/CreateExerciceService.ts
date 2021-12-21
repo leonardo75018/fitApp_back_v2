@@ -1,7 +1,7 @@
 import AppError from '@shared/errors/AppError';
 import { getCustomRepository } from 'typeorm';
-import Exercice from '../typeorm/entities/Exercices';
-import { ExercicesRepository } from '../typeorm/repositories/ExercicesRepository';
+import Exercice from '../infra/typeorm/entities/Exercices';
+import { ExercicesRepository } from '../infra/typeorm/repositories/ExercicesRepository';
 
 interface IResquest {
   name: string;
