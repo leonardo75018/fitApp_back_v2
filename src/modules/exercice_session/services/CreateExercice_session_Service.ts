@@ -2,6 +2,7 @@ import { getCustomRepository } from 'typeorm';
 import { Exercice_session_Repository } from '../infra/typeorm/repositories/Exercice_session_Repository';
 import Exercice_session from '../infra/typeorm/entities/Exercice_session';
 import AppError from '@shared/errors/AppError';
+import { ICreateExerciceSession } from '../domain/models/ICreateExerciceSession';
 
 interface IResquest {
   repetitions: string;
@@ -16,7 +17,7 @@ class CreateExercice_session_Service {
     intensity,
     sessions_id,
     exercices_id,
-  }: IResquest): Promise<Exercice_session> {
+  }: ICreateExerciceSession): Promise<Exercice_session> {
     const exercice_sessionRepository = getCustomRepository(
       Exercice_session_Repository,
     );

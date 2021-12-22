@@ -5,6 +5,7 @@ import authConfig from '@config/auth';
 import { getCustomRepository } from 'typeorm';
 import User from '../infra/typeorm/entities/User';
 import UsersRepository from '../infra/typeorm/repositories/UsersRepository';
+import { IUserRepository } from '../domain/model/repositories/IUserRepository';
 
 interface IRequest {
   email: string;
@@ -17,9 +18,10 @@ interface IResponse {
 }
 
 class CreateSessionsService {
+  constructor(private userRepository: IUserRepository) { }
   public async execute({ email, password }: IRequest): Promise<IResponse> {
-    const usersRepository = getCustomRepository(UsersRepository);
-    const user = await usersRepository.findByEmail(email);
+
+    const user = await this.userRepository.findByEmail(email);
 
     if (!user) {
       throw new AppError('Incorrect email/password combination.', 401);

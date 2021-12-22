@@ -1,3 +1,4 @@
+import { IExercice } from '@modules/exercices/domain/model/IExercerice';
 import {
   Column,
   CreateDateColumn,
@@ -7,7 +8,7 @@ import {
 } from 'typeorm';
 
 @Entity('exercices')
-class Exercice {
+class Exercice implements IExercice {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 

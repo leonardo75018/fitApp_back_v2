@@ -9,9 +9,10 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
+import { IExerciceSession } from '@modules/exercice_session/domain/models/IExerciceSession';
 
 @Entity('exercice_session')
-class Exercice_session {
+class Exercice_session implements IExerciceSession {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 

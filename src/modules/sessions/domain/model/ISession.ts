@@ -1,10 +1,11 @@
-export interface ISessions {
+import { IWeek } from '@modules/weeks/domain/mdoel/Week';
+
+export interface ISession {
   id: string;
   name: string;
   backDrop: string;
   week_id: string;
-  week: Week;
+  week: IWeek;
   created_at: Date;
   updated_at: Date;
-
 }
