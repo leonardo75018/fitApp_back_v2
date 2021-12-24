@@ -5,7 +5,7 @@ import authConfig from '@config/auth';
 import { getCustomRepository } from 'typeorm';
 import User from '../infra/typeorm/entities/User';
 import UsersRepository from '../infra/typeorm/repositories/UsersRepository';
-import { IUserRepository } from '../domain/model/repositories/IUserRepository';
+import { IUserRepository } from '../domain/repositories/IUserRepository';
 
 interface IRequest {
   email: string;

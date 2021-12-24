@@ -3,7 +3,7 @@ import { hash } from 'bcryptjs';
 import { inject, injectable } from 'tsyringe';
 import { ICreateUser } from '../domain/model/ICreateUser';
 import { IUser } from '../domain/model/IUser';
-import { IUserRepository } from '../domain/model/repositories/IUserRepository';
+import { IUserRepository } from '../domain/repositories/IUserRepository';
 
 @injectable()
 class CreateUserService {

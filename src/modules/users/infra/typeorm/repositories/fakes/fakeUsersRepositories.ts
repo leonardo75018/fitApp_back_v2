@@ -1,12 +1,10 @@
 import { ICreateUser } from '@modules/users/domain/model/ICreateUser';
-import { IUserRepository } from '@modules/users/domain/model/repositories/IUserRepository';
+import { IUserRepository } from '@modules/users/domain/repositories/IUserRepository';
 import { v4 as uuidv4 } from 'uuid';
 import User from '../../entities/User';
 
-class FakeUsersRepository
-  implements Omit<IUserRepository, 'remove' | 'fidAll'>
-{
-  private users: User[];
+class FakeUsersRepository implements IUserRepository {
+  private users: User[] = [];
 
   public async create({
     firstName,
@@ -30,7 +28,9 @@ class FakeUsersRepository
 
   public async save(user: User): Promise<User> {
     Object.assign(this.users, user);
+    const findIndex = this.users.findIndex(findUser => findUser.id === user.id);
 
+    this.users[findIndex] = user;
     return user;
   }
 
@@ -46,7 +46,7 @@ class FakeUsersRepository
 
   public async findByEmail(email: string): Promise<User | undefined> {
     const user = this.users.find(user => user.email === email);
-    return user;
+    return undefined;
   }
 
   public async findAll(): Promise<User[] | undefined> {
